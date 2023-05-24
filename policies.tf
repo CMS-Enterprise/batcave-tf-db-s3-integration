@@ -27,9 +27,14 @@ data "aws_iam_policy_document" "s3" {
   }
 
   statement {
-    sid = "S3List"
+    sid = "S3importexport"
     actions = [
+      "s3:AbortMultipartUpload",  
+      "s3:DeleteObject",
+      "s3:GetObject",
       "s3:ListBucket",
+      "s3:ListMultipartUploadParts",
+      "s3:PutObject",
     ]
     resources = var.s3_bucket_arns
   }
