@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "this" {
       condition {
         test     = var.assume_role_condition_test
         variable = "aws:SourceArn"
-        values   = [var.db_arn]
+        values   = var.db_arns
       }
 
     }

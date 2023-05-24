@@ -83,15 +83,15 @@ variable "assume_role_condition_test" {
 }
 
 variable "aws_id" {
-  description = "Name of the [IAM condition operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) to evaluate when assuming the role"
+  description = "AWS Account Ids"
   type        = string
   default     = "111122223333"
 }
 
-variable "db_arn" {
-  description = "Name of the [IAM condition operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) to evaluate when assuming the role"
-  type        = string
-  default     = "arn:aws:rds:us-east-1:111122223333:db:dbname"
+variable "db_arns" {
+  description = "DB arns that should have the trust policies"
+  type        = list(string)
+  default     = [""]
 }
 
 
