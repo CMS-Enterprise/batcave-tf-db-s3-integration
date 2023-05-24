@@ -18,14 +18,6 @@ data "aws_iam_policy_document" "this" {
         variable = "aws:SourceAccount"
         values   = [var.aws_id]
       }
-
-      # https://aws.amazon.com/premiumsupport/knowledge-center/eks-troubleshoot-oidc-and-irsa/?nc1=h_ls
-      condition {
-        test     = var.assume_role_condition_test
-        variable = "aws:SourceArn"
-        values   = var.db_arns
-      }
-
     }
   }
 }
