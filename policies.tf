@@ -14,7 +14,7 @@ data "aws_iam_policy_document" "s3" {
   count = var.create_role && var.attach_s3_policy ? 1 : 0
 
   statement {
-    sid = "S3importexport"
+    sid = "S3importexportitems"
     actions = [
       "s3:AbortMultipartUpload",
       "s3:DeleteObject",
@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "s3" {
   }
 
   statement {
-    sid = "S3importexport"
+    sid = "S3importexportbucket"
     actions = [
       "s3:AbortMultipartUpload",  
       "s3:DeleteObject",
