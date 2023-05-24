@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "this" {
       condition {
         test     = var.assume_role_condition_test
         variable = "aws:SourceAccount"
-        values   = [var.aws_account_id]
+        values   = [var.aws_id]
       }
 
       # https://aws.amazon.com/premiumsupport/knowledge-center/eks-troubleshoot-oidc-and-irsa/?nc1=h_ls

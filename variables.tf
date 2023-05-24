@@ -75,7 +75,7 @@ variable "max_session_duration" {
   default     = null
 }
 
-variable "aws_account" {
+variable "aws_id" {
   description = "Name of the [IAM condition operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) to evaluate when assuming the role"
   type        = string
   default     = "111122223333"
