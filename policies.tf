@@ -22,6 +22,7 @@ data "aws_iam_policy_document" "s3" {
       "s3:ListBucket",
       "s3:ListMultipartUploadParts",
       "s3:PutObject",
+      "s3:GetBucketLocation"
     ]
     resources = [for bucket in var.s3_bucket_arns : "${bucket}/*"]
   }
@@ -35,6 +36,7 @@ data "aws_iam_policy_document" "s3" {
       "s3:ListBucket",
       "s3:ListMultipartUploadParts",
       "s3:PutObject",
+      "s3:GetBucketLocation"
     ]
     resources = var.s3_bucket_arns
   }
