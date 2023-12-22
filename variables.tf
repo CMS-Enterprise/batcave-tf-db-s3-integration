@@ -28,12 +28,6 @@ variable "role_description" {
   default     = null
 }
 
-variable "role_name_prefix" {
-  description = "IAM role name prefix"
-  type        = string
-  default     = null
-}
-
 variable "policy_name_prefix" {
   description = "IAM policy name prefix"
   type        = string
@@ -49,7 +43,7 @@ variable "role_policy_arns" {
 variable "oidc_providers" {
   description = "Map of OIDC providers where each provider map should contain the `provider`, `provider_arn`, and `namespace_service_accounts`"
   type        = any
-  default     = {
+  default = {
     one = {
       provider_arn               = ""
       namespace_service_accounts = ["default:default"]
@@ -88,11 +82,6 @@ variable "aws_id" {
   default     = "111122223333"
 }
 
-variable "db_arns" {
-  description = "DB arns that should have the trust policies"
-  type        = list(string)
-  default     = [""]
-}
 
 
 ################################################################################
